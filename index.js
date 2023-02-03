@@ -4,6 +4,12 @@ const cookieParser = require("cookie-parser");
 const app = express();
 const port = process.env.PORT || 8000;
 const db = require("./config/mongoose");
+const cors = require("cors");
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 app.use(
   bodyParser.urlencoded({
